@@ -1,5 +1,7 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  mode: "jit",
+  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       display: ["Open Sans", "sans-serif"],
@@ -26,5 +28,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-}
+  variants: {
+    extend: {},
+  },
+  plugins: [require("@tailwindcss/forms")],
+};
